@@ -1,4 +1,4 @@
-package java.ui;
+package java_home.ui;
 
 //Меню с выбором режима работы
 //

@@ -1,4 +1,4 @@
-package java.analyzer;
+package java_home.analyzer;
 
 //Перебор всех возможных ключей
 //

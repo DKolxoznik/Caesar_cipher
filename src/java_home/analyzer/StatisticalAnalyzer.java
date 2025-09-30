@@ -1,4 +1,4 @@
-package java.analyzer;
+package java_home.analyzer;
 
 //Построение частотного анализа символов
 //
