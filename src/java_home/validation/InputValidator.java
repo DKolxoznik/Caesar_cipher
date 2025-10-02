@@ -6,6 +6,6 @@ package java_home.validation;
 //
 //Проверка прав доступа к файлам
 
-public class InputValidator {
+public class  InputValidator {
 
 }

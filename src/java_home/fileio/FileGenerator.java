@@ -1,16 +1,34 @@
 package java_home.fileio;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+//
+//
+//Создание файлов (Простой, большой)
+//
+//
+
 public class FileGenerator {
+
+    public static String getResourcesPath() {
+        String projectRoot = System.getProperty("user.dir");
+        return projectRoot + File.separator + "src" + File.separator + "resources" + File.separator;
+    }
+
+    // Создание полного пути к файлу в resources
+    public static String getResourceFilePath(String fileName) {
+        return getResourcesPath() + fileName;
+    }
+
     public static void createSampleFile(String fileName, String fileContent){
         try {
-            Path filePath = Paths.get(fileName);
-            Files.write(filePath, fileContent.getBytes(), StandardOpenOption.CREATE);
+            Path filePath = Paths.get(getResourceFilePath(fileName));
+            Files.write(filePath, fileContent.getBytes());
             IO.println("Файл создан: " + fileName);
         } catch (IOException e) {
             IO.println("Ошибка создания файла: " + e.getMessage());
@@ -18,7 +36,7 @@ public class FileGenerator {
     }
 
     public static void createLargeTestFile(String fileName, int lines){
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName))){
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(getResourceFilePath(fileName)))){
             for (int i = 0; i < lines; i++) {
                 writer.write("Строка " + (i + 1) + ": Это тестовый текст для проверки работы шифра Цезаря.\n");
             }

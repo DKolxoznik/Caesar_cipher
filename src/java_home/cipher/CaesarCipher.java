@@ -14,7 +14,6 @@ public class CaesarCipher {
     }
 
     private char encryptChar(char character, int key) {
-        // Просто делегируем алфавиту
         return alphabet.shift(character, key);
     }
 

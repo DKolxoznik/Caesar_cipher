@@ -14,11 +14,23 @@ import java.nio.file.Paths;
 
 public class FileProcessor {
 
+    // Получение пути к папке resources
+    public static String getResourcesPath() {
+        // Для IDE типа IntelliJ IDEA/Eclipse
+        String projectRoot = System.getProperty("user.dir");
+        return projectRoot + File.separator + "src" + File.separator + "resources" + File.separator;
+    }
+
+    // Создание полного пути к файлу в resources
+    public static String getResourceFilePath(String fileName) {
+        return getResourcesPath() + fileName;
+    }
+
     // Чтение файла с указанной кодировкой
     public static String readFile(String filePath) throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(filePath), StandardCharsets.UTF_8))) {
+                new InputStreamReader(new FileInputStream(getResourceFilePath(filePath)), StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 content.append(line).append("\n");
@@ -30,7 +42,7 @@ public class FileProcessor {
     // Запись в файл с указанной кодировкой
     public static void writeFile(String filePath, String content) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(
-                new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8))) {
+                new OutputStreamWriter(new FileOutputStream(getResourceFilePath(filePath)), StandardCharsets.UTF_8))) {
             writer.write(content);
         }
     }
@@ -66,9 +78,9 @@ public class FileProcessor {
     // Обработка больших файлов (построчно)
     public static void processLargeFile(String inputFile, String outputFile, CaesarCipher cipher, int key, boolean encrypt) throws IOException {
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(inputFile), StandardCharsets.UTF_8));
+                new InputStreamReader(new FileInputStream(getResourceFilePath(inputFile)), StandardCharsets.UTF_8));
              BufferedWriter writer = new BufferedWriter(
-                     new OutputStreamWriter(new FileOutputStream(outputFile), StandardCharsets.UTF_8))) {
+                     new OutputStreamWriter(new FileOutputStream(getResourceFilePath(outputFile)), StandardCharsets.UTF_8))) {
 
             String line;
             int lineCount = 0;
@@ -92,7 +104,7 @@ public class FileProcessor {
 
     // Проверка существования файла
     public static boolean fileExists(String filePath) {
-        return Files.exists(Paths.get(filePath));
+        return Files.exists(Paths.get(getResourceFilePath(filePath)));
     }
 
 
