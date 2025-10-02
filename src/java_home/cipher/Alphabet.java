@@ -11,10 +11,10 @@ public class Alphabet {
     private final int size;
     public final boolean caseSensitive;
 
-    public static final String RUSSIAN_LOWER = "абвгдёжзийклмнопрстуфхцчшщъыьэюя";
-    public static final String RUSSIAN_UPPER = "АБВГДЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-    public static final String ENGLISH_LOWER = "abcdefghijklmnopqrstuvwxyz";
-    public static final String ENGLISH_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//    public static final String RUSSIAN_LOWER = "абвгдёжзийклмнопрстуфхцчшщъыьэюя";
+//    public static final String RUSSIAN_UPPER = "АБВГДЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+//    public static final String ENGLISH_LOWER = "abcdefghijklmnopqrstuvwxyz";
+//    public static final String ENGLISH_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public Alphabet(String characters, boolean caseSensitive) {
         this.characters = characters;
@@ -59,11 +59,11 @@ public class Alphabet {
     }
 
 
-    public String getCharacters() {return this.characters; }
-    public int getSize() { return this.size; }
-    public boolean isCaseSensitive() { return this.caseSensitive; }
-    public boolean isAlphabetic(char character) { return contains(character); }
-
-    public boolean isValidKey(int key) { return key >= 0 && key < size; }
-    public int normalizeKey(int key) { return Math.floorMod(key, size); }
+//    public String getCharacters() {return this.characters; }
+//    public int getSize() { return this.size; }
+//    public boolean isCaseSensitive() { return this.caseSensitive; }
+//    public boolean isAlphabetic(char character) { return contains(character); }
+//
+//    public boolean isValidKey(int key) { return key >= 0 && key < size; }
+//    public int normalizeKey(int key) { return Math.floorMod(key, size); }
 }
