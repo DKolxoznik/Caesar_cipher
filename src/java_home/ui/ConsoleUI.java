@@ -7,4 +7,5 @@ package java_home.ui;
 //Вывод результатов и ошибок
 
 public class ConsoleUI {
+
 }

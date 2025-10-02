@@ -7,4 +7,5 @@ package java_home.analyzer;
 //Поиск наиболее вероятного ключа
 
 public class StatisticalAnalyzer {
+
 }

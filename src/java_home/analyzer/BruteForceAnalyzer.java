@@ -7,4 +7,5 @@ package java_home.analyzer;
 //Критерий успеха: читаемость текста или сравнение с образцом
 
 public class BruteForceAnalyzer {
+
 }
