@@ -1,4 +1,4 @@
-package java.analyzer;
+package java_home.analyzer;
 
 //Перебор всех возможных ключей
 //
@@ -7,4 +7,5 @@ package java.analyzer;
 //Критерий успеха: читаемость текста или сравнение с образцом
 
 public class BruteForceAnalyzer {
+
 }

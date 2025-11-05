@@ -1,4 +1,4 @@
-package java.analyzer;
+package java_home.analyzer;
 
 //Построение частотного анализа символов
 //
@@ -7,4 +7,5 @@ package java.analyzer;
 //Поиск наиболее вероятного ключа
 
 public class StatisticalAnalyzer {
+
 }
