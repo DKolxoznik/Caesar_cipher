@@ -1,8 +1,12 @@
+package java_home;
+
 import java_home.ui.ConsoleUI;
 import java_home.ui.CaesarCipherSwingUI;
 import java.util.Scanner;
 
+public class Main {
     public static void main(String[] args) {
+        System.out.println("Caesar Cipher started!");
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Выберите интерфейс:");
@@ -27,3 +31,4 @@ import java.util.Scanner;
                 UI.StartProgram();
         }
     }
+}
